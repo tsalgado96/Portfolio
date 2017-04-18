@@ -3,6 +3,7 @@ html, body
   padding: 0px
   font-family: 'Lato', sans-serif
 
+/*Hero Section*/
 header
   height: 100vh
   background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url('img/hero.jpeg')
@@ -14,7 +15,7 @@ header
 
   img
     height: 125px
-    margin-bottom: 40px
+    margin-bottom: 100px
 
   nav
     text-align: center
@@ -41,7 +42,7 @@ header
 
   button
     font-family: 'Lato', sans-serif
-    font-weight: 100
+    font-weight: 300
     font-size: 18px
     margin-top: 30px
     border: 1px solid #4abcab
@@ -49,7 +50,7 @@ header
     color: #fff
     border-radius: 20px
     padding: 5px 20px
-    transition: background .35s
+    transition: background .35s ease
     &:hover
       background: #4abcab
 
@@ -59,18 +60,86 @@ header
   bottom: 5%
   left: 50%
   transform: translateX(-50%)
-  transition: bottom .25s
+  transition: bottom .15s ease
   &:hover
     bottom: 4.5%
   i
     color: #fff
+    transition: color .15s ease
     &:hover
       color: #4abcab
 
+/*About Section */
+#about
+  background: rgb(221, 219, 219)
+  overflow: auto
 .about-container
   text-align: center
-  background: rgb(209, 209, 209)
+  max-width: 1060px
+  margin: 0 auto
+  padding: 35px 20px 0 20px
+  h1
+    font-family: 'Lato', sans-serif
+    font-weight: 700
+    font-size: 22px
+    color: #415f63
+    text-transform: uppercase
   img
-    margin-top: 25px
-    height: 350px
+    margin: 25px 0
+    height: 325px
     border-radius: 50%
+
+.description
+  max-width: 700px
+  margin: 0 auto
+  p
+    font-family: 'Lato', sans-serif
+    font-weight: 400
+    font-size: 20px
+
+.skills-container
+  max-width: 700px
+  margin: 50px auto 50px auto
+
+.skills-box-left
+  width: 325px
+  float: left
+.skills-box-right
+  width: 325px
+  float: left
+  margin-left: 50px
+@media screen and (max-width: 800px)
+  .skills-box-left
+    float: none
+    margin: 0 auto
+  .skills-box-right
+    float: none
+    margin: 0 auto
+
+.progress
+  height: auto
+  background-color: rgb(200, 198, 198)
+  margin-bottom: 35px
+
+.progress-bar
+  background-color: #4abcab
+  height: 10px
+  transition-duration: 3s
+
+/*Footer*/
+footer
+  background-color: #707070
+  height: 200px
+  p
+    color: #e0e0e0
+    text-align: center
+
+.footer-icons
+  text-align: center
+  padding: 50px 0 45px 0
+  letter-spacing: 15px
+  a
+    color: #e0e0e0
+    transition: color .25s ease
+    &:hover
+      color: #4abcab

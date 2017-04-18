@@ -3,6 +3,7 @@ html, body {
   padding: 0px;
   font-family: "Lato", sans-serif; }
 
+/*Hero Section */
 header {
   height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("img/hero.jpeg");
@@ -13,7 +14,7 @@ header {
   text-align: center; }
   header img {
     height: 125px;
-    margin-bottom: 40px; }
+    margin-bottom: 100px; }
   header nav {
     text-align: center;
     font-family: "Lato", sans-serif;
@@ -37,7 +38,7 @@ header {
     text-transform: uppercase; }
   header button {
     font-family: "Lato", sans-serif;
-    font-weight: 100;
+    font-weight: 300;
     font-size: 18px;
     margin-top: 30px;
     border: 1px solid #4abcab;
@@ -45,7 +46,7 @@ header {
     color: #fff;
     border-radius: 20px;
     padding: 5px 20px;
-    transition: background 0.35s; }
+    transition: background 0.35s ease; }
     header button:hover {
       background: #4abcab; }
 
@@ -55,20 +56,91 @@ header {
   bottom: 5%;
   left: 50%;
   transform: translateX(-50%);
-  transition: bottom 0.25s; }
+  transition: bottom 0.15s ease; }
   .page-scroll:hover {
     bottom: 4.5%; }
   .page-scroll i {
-    color: #fff; }
+    color: #fff;
+    transition: color 0.15s ease; }
     .page-scroll i:hover {
       color: #4abcab; }
 
+/*About Section */
+#about {
+  background: #dddbdb;
+  overflow: auto; }
+
 .about-container {
   text-align: center;
-  background: #d1d1d1; }
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 35px 20px 0 20px; }
+  .about-container h1 {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: #415f63;
+    text-transform: uppercase; }
   .about-container img {
-    margin-top: 25px;
-    height: 350px;
+    margin: 25px 0;
+    height: 325px;
     border-radius: 50%; }
+
+.description {
+  max-width: 700px;
+  margin: 0 auto; }
+  .description p {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 20px; }
+
+.skills-container {
+  max-width: 700px;
+  margin: 50px auto 50px auto; }
+
+.skills-box-left {
+  width: 325px;
+  float: left; }
+
+.skills-box-right {
+  width: 325px;
+  float: left;
+  margin-left: 50px; }
+
+@media screen and (max-width: 800px) {
+  .skills-box-left {
+    float: none;
+    margin: 0 auto; }
+
+  .skills-box-right {
+    float: none;
+    margin: 0 auto; } }
+.progress {
+  height: auto;
+  background-color: #c8c6c6;
+  margin-bottom: 35px; }
+
+.progress-bar {
+  background-color: #4abcab;
+  height: 10px;
+  transition-duration: 3s; }
+
+/*Footer */
+footer {
+  background-color: #707070;
+  height: 200px; }
+  footer p {
+    color: #e0e0e0;
+    text-align: center; }
+
+.footer-icons {
+  text-align: center;
+  padding: 50px 0 45px 0;
+  letter-spacing: 15px; }
+  .footer-icons a {
+    color: #e0e0e0;
+    transition: color 0.25s ease; }
+    .footer-icons a:hover {
+      color: #4abcab; }
 
 /*# sourceMappingURL=style.css.map */
