@@ -6,9 +6,16 @@ $(function() {
       if (target.length) {
         $('html, body').animate({
           scrollTop: target.offset().top
-        }, 800);
+        }, 1000);
         return false;
       }
     }
   });
+  animateProgress();
 });
+
+function animateProgress(){
+  $('.progress .progress-bar').css("width", function() {
+    return $(this).attr("aria-valuenow") + "%";
+  });
+}
