@@ -131,18 +131,18 @@
             <div id="contact-intro"><p>After you introduce yourself and your project, I'll get in touch with you to schedule a time to chat. You should expect to hear from me in a day or so.</p></div>
           </div>
           <div class="modal-body">
-            <form id="contact-form">
+            <form name="contact-form" method="post" action="send_form_email.php">
               <div class="row">
                 <div class="col-md-6">
                   <input type="text" name="name" placeholder="Name*">
                 </div>
                 <div class="col-md-6">
-                  <input type="text" name="name" placeholder="Email*">
+                  <input type="text" name="email" placeholder="Email*">
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6">
-                  <input type="text" name="name" placeholder="Phone Number">
+                  <input type="text" name="telephone" placeholder="Phone Number">
                 </div>
                 <div class="col-md-6">
                   <input type="text" name="name" placeholder="Website">
@@ -150,7 +150,7 @@
               </div>
               <div class="row">
                 <div class="col-md-12">
-                  <textarea class="" rows="8" id="" placeholder="Tell me about your project... What is it? Why are you doing it? What do you hope to accomplish? How can I help? Timeline and budget details are also appreciated. *"></textarea>
+                  <textarea name="message" rows="8" id="" placeholder="Tell me about your project... What is it? Why are you doing it? What do you hope to accomplish? How can I help? Timeline and budget details are also appreciated. *"></textarea>
                 </div>
               </div>
               <div class="row">
