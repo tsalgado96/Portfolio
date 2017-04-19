@@ -17,14 +17,14 @@
   </head>
   <body>
     <!-- Start Hero Container -->
-    <header>
+    <header id="home">
       <nav>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#work">Work</a>
         <a href="#contact">Contact</a>
       </nav>
-      <img src="img/ts_gray.png" alt="Personal Logo">
+      <img src="img/ts_blue.png" alt="Personal Logo">
       <h1>Hi, I'm TJ</h1>
       <h1>I Build Websites</h1>
       <a href="#contact"><button type="button" name="button">Yes, I'm Available For Hire</button></a>
@@ -120,19 +120,43 @@
       </div>
     </section>
 
-    <!-- Modal fullscreen -->
+    <!-- Start Fullscreen Modal Contact Form-->
     <div class="modal modal-fullscreen fade" id="modal-fullscreen" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <h4 class="modal-title" id="myModalLabel">Ok, just a few quick questions.</h4>
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true"><i class="fa fa-times-circle fa-2x"></i></span><span class="sr-only">Close</span></button>
+            <img src="img/ts_blue.png" alt="">
+            <h1 class="modal-title" id="myModalLabel">Ok, just a few quick questions.</h1>
+            <div id="contact-intro"><p>After you introduce yourself and your project, I'll get in touch with you to schedule a time to chat. You should expect to hear from me in a day or so.</p></div>
           </div>
           <div class="modal-body">
-            ...
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <form id="contact-form">
+              <div class="row">
+                <div class="col-md-6">
+                  <input type="text" name="name" placeholder="Name*">
+                </div>
+                <div class="col-md-6">
+                  <input type="text" name="name" placeholder="Email*">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <input type="text" name="name" placeholder="Phone Number">
+                </div>
+                <div class="col-md-6">
+                  <input type="text" name="name" placeholder="Website">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <textarea class="" rows="8" id="" placeholder="Tell me about your project... What is it? Why are you doing it? What do you hope to accomplish? How can I help? Timeline and budget details are also appreciated. *"></textarea>
+                </div>
+              </div>
+              <div class="row">
+                <input type="submit" name="" value="Submit Your Project">
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -140,14 +164,14 @@
 
     <!--Start Footer -->
     <footer>
-      <img src="img/ts_blue.png" alt="Personal Logo">
+      <a href="#home"><img src="img/ts_blue.png" alt="Personal Logo"></a>
       <p>Handmade by Me &copy; 2017</p>
       <div class="footer-icons">
-        <a href="https://www.facebook.com/tj.salgado" target="_blank"><i class="fa fa-2x fa-facebook-square"></i></a>
+        <a href="https://www.linkedin.com/in/teodoro-salgado-a02651a3/" target="_blank"><i class="fa fa-2x fa-linkedin"></i></a>
         <a href="https://github.com/tsalgado96" target="_blank"><i class="fa fa-2x fa-github"></i></a>
         <a href="https://www.freecodecamp.com/tsalgado96" target="_blank"><i class="fa fa-2x fa-free-code-camp"></i></a>
         <a href="http://codepen.io/tsalgado/" target="_blank"><i class="fa fa-2x fa-codepen"></i></a>
-        <a href="https://twitter.com/TjSalgado" target="_blank"><i class="fa fa-2x fa-twitter-square"></i></a>
+        <a href="mailto:tsalgado96@gmail.com" target="_blank"><i class="fa fa-2x fa-envelope-o"></i></a>
       </div>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

@@ -157,7 +157,7 @@ header
     margin-bottom: 40px
   p
     font-weight: 300
-    font-size: 17px
+    font-size: 22px
     color: rgb(88, 88, 88)
   a
     color: #2A3A3F
@@ -181,20 +181,93 @@ header
 
 .modal-fullscreen
   background: transparent
+  text-align: center
   .modal-content
     background: transparent
     border: 0
     -webkit-box-shadow: none
     box-shadow: none
+    h1
+      color: #fff
+      font-family: 'Lato', sans-serif
+      font-weight: 300
+      font-size: 3em
+      margin-bottom: 20px
+    p
+      color: #d9d9d9
+      font-family: 'Lato', sans-serif
+      font-weight: 300
+      font-size: 1.5em
+    i
+      color: #fff
+    img
+      height: 150px
+
+#contact-intro
+  max-width: 700px
+  margin: 0 auto
+
+#contact-form
+  text-align: center
+  max-width: 600px
+  margin: 10px auto 0 auto
+  input[type="text"]
+    background-color: #707070
+    border: 2px solid #fff
+    border-radius: 5px
+    color: #fff
+    padding: 7px 3px 7px 10px
+    font-size: 1.1em
+    width: 100%
+    margin-bottom: 15px
+    &::placeholder
+      color: #cccccc
+    &:focus
+      outline: none
+
+  textarea
+    background-color: #707070
+    border: 2px solid #fff
+    border-radius: 5px
+    color: #fff
+    padding: 10px
+    width: 100%
+    font-size: 1.1em
+    resize: none
+    margin-bottom: 15px
+    &::placeholder
+      color: #cccccc
+    &:focus
+      outline: none
+
+  input[type="submit"]
+    background-color: #707070
+    border: 2px solid #4abcab
+    border-radius: 20px
+    color: #fff
+    padding: 8px 25px
+    font-size: 1em
+    font-weight: 700
+    margin-bottom: 15px
+    text-transform: uppercase
+    transition: background-color .35s ease, color .35s ease
+    &::placeholder
+      color: #cccccc
+    &:focus
+      outline: none
+    &:hover
+      background-color: #4abcab
+      color: #707070
+.modal-header
+  border: none
 
 .modal-backdrop.modal-backdrop-fullscreen
   background: #707070
   &.in
-    opacity: .9
-    filter: alpha(opacity = 90)
+    opacity: 1
+    filter: alpha(opacity = 100)
 
 /* .modal-fullscreen size: we use Bootstrap media query breakpoints
-
 .modal-fullscreen .modal-dialog
   margin: 0
   margin-right: auto
@@ -217,11 +290,16 @@ footer
   text-align: center
   img
     height: 80px
+    margin-bottom: 10px
+    transition: height .25s ease, margin-bottom .25s ease
+    &:hover
+      height: 90px
+      margin-bottom: 0px
   p
     color: #e0e0e0
     text-align: center
     font-weight: 300
-    margin-top: 20px
+    margin-top: 10px
 
 .footer-icons
   text-align: center
