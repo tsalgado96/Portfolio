@@ -11,11 +11,25 @@ $(function() {
       }
     }
   });
-  animateProgress();
-});
 
-function animateProgress(){
-  $('.progress .progress-bar').css("width", function() {
-    return $(this).attr("aria-valuenow") + "%";
+  var waypoint = new Waypoint({
+  element: document.getElementsByClassName('progress-bar'),
+  handler: function(direction) {
+    $('.progress .progress-bar').css("width", function() {
+      return $(this).attr("aria-valuenow") + "%";
+    });
+  },
+    offset: '90%'
   });
-}
+
+  $(".modal-fullscreen").on('show.bs.modal', function () {
+    setTimeout( function() {
+      $(".modal-backdrop").addClass("modal-backdrop-fullscreen");
+    }, 0);
+  });
+  $(".modal-fullscreen").on('hidden.bs.modal', function () {
+    $(".modal-backdrop").addClass("modal-backdrop-fullscreen");
+  });
+
+
+});
