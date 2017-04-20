@@ -6,7 +6,7 @@ html, body {
 /*Hero Section */
 header {
   height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("img/hero.jpeg");
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/hero.jpeg");
   background-attachment: fixed;
   background-position: center center;
   background-size: cover;
@@ -36,6 +36,9 @@ header {
     text-align: center;
     display: block;
     text-transform: uppercase; }
+    @media screen and (max-width: 768px) {
+      header h1 {
+        font-size: 11vw; } }
   header button {
     font-family: "Lato", sans-serif;
     font-weight: 300;
@@ -76,13 +79,11 @@ header {
   text-align: center;
   max-width: 1060px;
   margin: 0 auto;
-  padding: 35px 20px 0 20px; }
+  padding: 10px 20px 0 20px; }
   .about-container h1 {
-    font-family: "Lato", sans-serif;
-    font-weight: 700;
-    font-size: 22px;
-    color: #415f63;
-    text-transform: uppercase; }
+    font-weight: 300;
+    font-size: 36px;
+    color: #383838; }
   .about-container img {
     margin: 25px 0;
     height: 325px;
@@ -95,7 +96,7 @@ header {
     font-family: "Lato", sans-serif;
     font-weight: 300;
     font-size: 22px;
-    color: #777676;
+    color: #7a7979;
     line-height: 34px; }
   .description a {
     color: #4abcab;
@@ -105,9 +106,10 @@ header {
 
 .skills-container {
   max-width: 700px;
-  margin: 50px auto 50px auto; }
+  margin: 0 auto;
+  padding-top: 15px; }
   .skills-container h4 {
-    color: #504f4f; }
+    color: #5d5d5d; }
 
 .skills-box-left {
   width: 325px;
@@ -136,12 +138,52 @@ header {
 .progress-bar {
   background-color: #4abcab;
   height: 5px;
-  transition-duration: 3s; }
+  -webkit-transition: 3s;
+  -moz-transition: 3s;
+  transition: 3s; }
+
+/*Work Section */
+#work {
+  background: #fefefe;
+  overflow: auto; }
+  #work .work-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    padding: 15px 17px; }
+    #work .work-container h1 {
+      font-weight: 300;
+      font-size: 40px;
+      color: #383838;
+      margin-bottom: 40px; }
+    #work .work-container p {
+      font-size: 17px;
+      font-weight: 300;
+      color: #7a7979;
+      line-height: 29px; }
+
+.work-hero img {
+  width: 100%; }
+.work-hero h2 {
+  margin: 40px 0;
+  font-weight: 100;
+  color: #5d5d5d;
+  font-size: 34px; }
+
+.work-pages {
+  margin-top: 35px; }
+  .work-pages img {
+    height: 200px; }
+  .work-pages h3 {
+    color: #5d5d5d;
+    font-weight: 300;
+    text-transform: uppercase; }
+  .work-pages .col-md-4 {
+    padding-top: 30px; }
 
 /*Contact Section */
 #contact {
-  height: 350px;
-  background-color: #4abdac;
+  background-color: #4abcab;
   overflow: auto; }
 
 .contact-container {
@@ -151,7 +193,7 @@ header {
   .contact-container h1 {
     font-weight: 300;
     font-size: 3.2em;
-    color: #3c3b3b;
+    color: #383838;
     margin-top: 50px;
     margin-bottom: 40px; }
   .contact-container p {
@@ -161,7 +203,7 @@ header {
   .contact-container a {
     color: #2A3A3F; }
   .contact-container button {
-    margin-top: 50px;
+    margin: 50px 10px;
     background: none;
     border: 1px solid #2A3A3F;
     border-radius: 20px;

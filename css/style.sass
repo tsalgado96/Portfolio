@@ -1,12 +1,19 @@
+@import "bourbon/bourbon"
+$mainFont: 'Lato', sans-serif
+$primaryBlue: #4abcab
+$headingColor: #383838
+$subheadingColor: #5d5d5d
+$textColor: #7a7979
+
 html, body
   margin: 0px
   padding: 0px
-  font-family: 'Lato', sans-serif
+  font-family: $mainFont
 
 /*Hero Section*/
 header
   height: 100vh
-  background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url('img/hero.jpeg')
+  background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url('../img/hero.jpeg')
   background-attachment: fixed
   background-position: center center
   background-size: cover
@@ -19,7 +26,7 @@ header
 
   nav
     text-align: center
-    font-family: 'Lato', sans-serif
+    font-family: $mainFont
     font-size: 1.5em
     padding: 10px 0 0 0
     letter-spacing: 3px
@@ -29,30 +36,31 @@ header
       padding: 0 10px
       &:hover,&:active,&:focus
         text-decoration: none
-        color: #4abcab
+        color: $primaryBlue
 
   h1
-    font-family: 'Lato', sans-serif
+    font-family: $mainFont
     font-weight: 100
     color: #fff
     font-size: 6.5em
     text-align: center
     display: block
     text-transform: uppercase
-
+    @media screen and (max-width: 768px)
+      font-size: 11vw
   button
-    font-family: 'Lato', sans-serif
+    font-family: $mainFont
     font-weight: 300
     font-size: 18px
     margin-top: 30px
-    border: 1px solid #4abcab
+    border: 1px solid $primaryBlue
     background: none
     color: #fff
     border-radius: 20px
     padding: 5px 20px
     transition: background .35s ease
     &:hover,&:focus
-      background: #4abcab
+      background: $primaryBlue
       text-decoration: none
       outline: none
 
@@ -69,7 +77,7 @@ header
     color: #fff
     transition: color .15s ease
     &:hover
-      color: #4abcab
+      color: $primaryBlue
 
 /*About Section */
 #about
@@ -79,13 +87,11 @@ header
   text-align: center
   max-width: 1060px
   margin: 0 auto
-  padding: 35px 20px 0 20px
+  padding: 10px 20px 0 20px
   h1
-    font-family: 'Lato', sans-serif
-    font-weight: 700
-    font-size: 22px
-    color: #415f63
-    text-transform: uppercase
+    font-weight: 300
+    font-size: 36px
+    color: $headingColor
   img
     margin: 25px 0
     height: 325px
@@ -95,22 +101,23 @@ header
   max-width: 650px
   margin: 0 auto
   p
-    font-family: 'Lato', sans-serif
+    font-family: $mainFont
     font-weight: 300
     font-size: 22px
-    color: #777676
+    color: $textColor
     line-height: 34px
   a
-    color: #4abcab
+    color: $primaryBlue
     text-decoration: none
     &:hover,&:focus
       color: #307c70
 
 .skills-container
   max-width: 700px
-  margin: 50px auto 50px auto
+  margin: 0 auto
+  padding-top: 15px
   h4
-    color: rgb(80, 79, 79)
+    color: $subheadingColor
 
 .skills-box-left
   width: 325px
@@ -131,18 +138,57 @@ header
 
 .progress
   height: auto
-  background-color: rgb(200, 198, 198)
+  background-color: #c8c6c6
   margin-bottom: 35px
 
 .progress-bar
-  background-color: #4abcab
+  background-color: $primaryBlue
   height: 5px
-  transition-duration: 3s
+  @include transition(3s)
+
+/*Work Section*/
+#work
+  background: #fefefe
+  overflow: auto
+  .work-container
+    max-width: 1100px
+    margin: 0 auto
+    margin-bottom: 50px
+    padding: 15px 17px
+    h1
+      font-weight: 300
+      font-size: 40px
+      color: $headingColor
+      margin-bottom: 40px
+    p
+      font-size: 17px
+      font-weight: 300
+      color: $textColor
+      line-height: 29px
+
+.work-hero
+  img
+    width: 100%
+  h2
+    margin: 40px 0
+    font-weight: 100
+    color: $subheadingColor
+    font-size: 34px
+
+.work-pages
+  margin-top: 35px
+  img
+    height: 200px
+  h3
+    color: $subheadingColor
+    font-weight: 300
+    text-transform: uppercase
+  .col-md-4
+    padding-top: 30px
 
 /*Contact Section*/
 #contact
-  height: 350px
-  background-color: #4abdac
+  background-color: $primaryBlue
   overflow: auto
 
 .contact-container
@@ -152,7 +198,7 @@ header
   h1
     font-weight: 300
     font-size: 3.2em
-    color: rgb(60, 59, 59)
+    color: $headingColor
     margin-top: 50px
     margin-bottom: 40px
   p
@@ -162,7 +208,7 @@ header
   a
     color: #2A3A3F
   button
-    margin-top: 50px
+    margin: 50px 10px
     background: none
     border: 1px solid #2A3A3F
     border-radius: 20px
@@ -173,7 +219,7 @@ header
     transition: background .35s ease, color .35s ease
     &:hover,&:focus
       background: #2A3A3F
-      color: #4abcab
+      color: $primaryBlue
       text-decoration: none
       outline: none
 
@@ -189,13 +235,13 @@ header
     box-shadow: none
     h1
       color: #fff
-      font-family: 'Lato', sans-serif
+      font-family: $mainFont
       font-weight: 300
       font-size: 3em
       margin-bottom: 20px
     p
       color: #d9d9d9
-      font-family: 'Lato', sans-serif
+      font-family: $mainFont
       font-weight: 300
       font-size: 1.5em
     i
@@ -242,7 +288,7 @@ header
 
   input[type="submit"]
     background-color: #707070
-    border: 2px solid #4abcab
+    border: 2px solid $primaryBlue
     border-radius: 20px
     color: #fff
     padding: 8px 25px
@@ -256,7 +302,7 @@ header
     &:focus
       outline: none
     &:hover
-      background-color: #4abcab
+      background-color: $primaryBlue
       color: #707070
 .modal-header
   border: none
@@ -309,4 +355,4 @@ footer
     color: #e0e0e0
     transition: color .25s ease
     &:hover
-      color: #4abcab
+      color: $primaryBlue
