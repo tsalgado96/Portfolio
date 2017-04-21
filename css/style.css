@@ -181,6 +181,32 @@ header {
   .work-pages .col-md-4 {
     padding-top: 30px; }
 
+.exp-work-container h1 {
+  margin-bottom: 40px;
+  font-weight: 300;
+  font-size: 38px; }
+.exp-work-container .col-md-3 {
+  min-height: 250px;
+  opacity: 0.65; }
+  .exp-work-container .col-md-3:hover {
+    opacity: 1; }
+.exp-work-container #wiki-viewer {
+  background: url("../img/wiki-viewer.png");
+  background-position: center;
+  background-size: cover; }
+.exp-work-container #random-quote {
+  background: url("../img/quote.png");
+  background-position: center;
+  background-size: cover; }
+.exp-work-container #twitch {
+  background: url("../img/twitch.png");
+  background-position: center;
+  background-size: cover; }
+.exp-work-container #weather {
+  background: url("../img/weather.png");
+  background-position: center;
+  background-size: cover; }
+
 /*Contact Section */
 #contact {
   background-color: #4abcab;
