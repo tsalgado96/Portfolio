@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="../css/weather.css">
+  <title>Local Weather</title>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="container">
+      <div class="text-center"><h1 id="city">City</h1></div>
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div id="icon" class="col-md-3 text-center"><img id="imgIcon"></div>
+        <div class="col-md-3 text-center"><a id="changeTemp" href="#"><h2 id="temp">Temperature</h2></a></div>
+        <div class="col-md-3"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script>
+  $(document).ready(function(){
+
+var lon, lat, condition;
+
+$.getJSON("http://ip-api.com/json", function(val) {
+  lat = val.lat;
+  lon = val.lon;
+
+  $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=637532264cc8fd545914cd1457df6918&callback=?", function(data){
+    var kelvin = data.main.temp;
+    var celsius = Math.floor(data.main.temp - 273.15);
+    var far = Math.floor((data.main.temp)*(9/5)-459.67);
+    var temp = celsius;
+    var weatherID = data.weather[0].id;
+    var backgroundImage;
+    if (weatherID >= 200 && weatherID < 300){
+      $(".container-fluid").css("background-image", "url('https://static.pexels.com/photos/29095/pexels-photo-29095.jpg')");
+    }
+    else if (weatherID >= 300 && weatherID < 400){
+      $(".container-fluid").css("background-image", "url('https://static.pexels.com/photos/39811/pexels-photo-39811.jpeg')");
+    }
+    else if (weatherID >= 500 && weatherID < 600){
+      $(".container-fluid").css("background-image", "url('https://static.pexels.com/photos/17739/pexels-photo.jpg')");
+    }
+    else if (weatherID >= 600 && weatherID < 700){
+      $(".container-fluid").css("background-image", "url('https://static.pexels.com/photos/235621/pexels-photo-235621.jpeg')");
+    }
+    else if (weatherID >= 700 && weatherID < 800){
+      $(".container-fluid").css("background-image", "url('https://static.pexels.com/photos/325185/pexels-photo-325185.jpeg')");
+    }
+    else if (weatherID >= 700 && weatherID < 800){
+      $(".container-fluid").css("background-image", "url('https://static.pexels.com/photos/325185/pexels-photo-325185.jpeg')");
+    }
+    else if (weatherID == 800){
+      $(".container-fluid").css("background-image", "url('https://static.pexels.com/photos/3847/jetty-landing-stage-sea-sky.jpeg')");
+    }
+    else if (weatherID >= 801 && weatherID < 900){
+      $(".container-fluid").css("background-image", "url('https://static.pexels.com/photos/201316/pexels-photo-201316.jpeg')");
+    }
+    else{
+      $(".container-fluid").css("background-image", "url('https://static.pexels.com/photos/39811/pexels-photo-39811.jpeg')");
+    }
+    $("#city").html(data.name + ", " + val.regionName + ", " + data.sys.country);
+    document.getElementById("imgIcon").src="http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
+    $("#temp").html(temp + "&deg;" + " C");
+    $("#changeTemp").on("click", function(){
+      if(temp == celsius){
+        temp = far;
+        $("#temp").html(temp + "&deg;" + " F");
+      }
+      else if(temp == far){
+        temp = celsius;
+        $("#temp").html(temp + "&deg;" + " C");
+      }
+    });
+  });
+});
+})
+$(document).ready(function(){
+
+var lon, lat, condition;
+
+$.getJSON("http://ip-api.com/json", function(val) {
+  lat = val.lat;
+  lon = val.lon;
+
+  $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=637532264cc8fd545914cd1457df6918&callback=?", function(data){
+    var kelvin = data.main.temp;
+    var celsius = Math.floor(data.main.temp - 273.15);
+    var far = Math.floor((data.main.temp)*(9/5)-459.67);
+    var temp = celsius;
+    var weatherID = data.weather[0].id;
+    var backgroundImage;
+    if (weatherID >= 200 && weatherID < 300){
+      $(".container-fluid").css("background-image", "url('https://static.pexels.com/photos/29095/pexels-photo-29095.jpg')");
+    }
+    else if (weatherID >= 300 && weatherID < 400){
+      $(".container-fluid").css("background-image", "url('https://static.pexels.com/photos/39811/pexels-photo-39811.jpeg')");
+    }
+    else if (weatherID >= 500 && weatherID < 600){
+      $(".container-fluid").css("background-image", "url('https://static.pexels.com/photos/17739/pexels-photo.jpg')");
+    }
+    else if (weatherID >= 600 && weatherID < 700){
+      $(".container-fluid").css("background-image", "url('https://static.pexels.com/photos/235621/pexels-photo-235621.jpeg')");
+    }
+    else if (weatherID >= 700 && weatherID < 800){
+      $(".container-fluid").css("background-image", "url('https://static.pexels.com/photos/325185/pexels-photo-325185.jpeg')");
+    }
+    else if (weatherID >= 700 && weatherID < 800){
+      $(".container-fluid").css("background-image", "url('https://static.pexels.com/photos/325185/pexels-photo-325185.jpeg')");
+    }
+    else if (weatherID == 800){
+      $(".container-fluid").css("background-image", "url('https://static.pexels.com/photos/3847/jetty-landing-stage-sea-sky.jpeg')");
+    }
+    else if (weatherID >= 801 && weatherID < 900){
+      $(".container-fluid").css("background-image", "url('https://static.pexels.com/photos/201316/pexels-photo-201316.jpeg')");
+    }
+    else{
+      $(".container-fluid").css("background-image", "url('https://static.pexels.com/photos/39811/pexels-photo-39811.jpeg')");
+    }
+    $("#city").html(data.name + ", " + val.regionName + ", " + data.sys.country);
+    document.getElementById("imgIcon").src="http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
+    $("#temp").html(temp + "&deg;" + " C");
+    $("#changeTemp").on("click", function(){
+      if(temp == celsius){
+        temp = far;
+        $("#temp").html(temp + "&deg;" + " F");
+      }
+      else if(temp == far){
+        temp = celsius;
+        $("#temp").html(temp + "&deg;" + " C");
+      }
+    });
+  });
+});
+})
+
+  </script>
+</body>
+</html>

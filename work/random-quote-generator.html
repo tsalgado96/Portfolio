@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, intial-scale=1.0">
+  <title>Random Quote Generator</title>
+  <link rel="stylesheet" type="text/css" href="../css/quote.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="container">
+      <h1 class="quote text-center"></h1>
+      <i><p class="author text-center"></p></i>
+    </div>
+    <div id="buttons">
+      <a id="twitterIcon" class="fa fa-twitter fa-3x" href="#"></a>
+      <button id="trigger" class="btn btn-lg" type="submit">Inspire Me</button>
+    </div>
+
+  </div>
+
+  <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  <script>
+  $(document).ready(function(){
+  var quote, author, randNum;
+  var mainColor = ["#F44336", "#E91E63", "#9C27B0", "#673AB7",
+  "#3F51B5", "#2196F3", "#03A9F4", "#00BCD4",
+  "#009688", "#4CAF50", "#8BC34A", "#FF9800", "#FF5722"];
+
+  getQuote();
+
+  function getQuote(){
+    var url = "http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?";
+    randNum = Math.floor((Math.random()*mainColor.length));
+    $.getJSON(url, function(data){
+      quote = '"' + data.quoteText.trim() + '"';
+      author = "- " + data.quoteAuthor;
+      $(".quote").html(quote);
+      $(".author").html(author);
+      $(".container-fluid").css("background-color",mainColor[randNum]);
+      $(".container").css("color",mainColor[randNum]);
+      $(".btn").css("background-color",mainColor[randNum]);
+      $(".fa").css("color",mainColor[randNum]);
+    });
+  };
+
+  $("#trigger").on("click", getQuote);
+
+  $("#twitterIcon").on("click",function(){
+    window.open("https://twitter.com/intent/tweet?text=" + quote + " " + author);
+  });
+});
+
+  </script>
+</body>
+</html>

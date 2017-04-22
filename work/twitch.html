@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Twitch Streamer Status</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:600|Squada+One" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.1.0/octicons.min.css">
+    <link rel="stylesheet" href="../css/twitch.css">
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="container">
+        <h1>Twitch Streamers</h1>
+      </div>
+      <div id="streamerContainer" class="container"></div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script>
+    var channels = ["ESL_SC2", "OgamingSC2", "cretetion",
+"freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas", "brunofin", "comster404"];
+
+$(document).ready(function(){
+  getChannelInfo();
+});
+
+function getChannelInfo(){
+  channels.forEach(function(channel){
+    function buildURL(type, name){
+      return 'https://wind-bow.gomix.me/twitch-api/'+type+'/'+name+'?callback=?';
+    }
+    $.getJSON(buildURL('channels',channel)).done(function(data1){
+      var status;
+      if(data1.status === 404){
+        status = 'closed';
+      }else{
+        status = 'active';
+      }
+      $.getJSON(buildURL('streams',channel)).done(function(data2){
+        var game, html, backgroundColor, name=channel, online;
+        var link='https://www.twitch.tv/'+name;
+        if(status === 'active' && data2.stream === null){
+          game = 'Offline';
+          backgroundColor = "rgb(125, 124, 124)";
+          online = 'offline';
+        }else if(status === 'active' && data2.stream != null){
+          game = 'Streaming: '+data2.stream.game;
+          backgroundColor = "#6eac35";
+          online = 'online';
+        }
+        else{
+          game = 'Account Closed';
+          backgroundColor = "rgb(74, 74, 74)";
+          online = 'closed';
+        }
+        html = `
+        <div class="streamer row" style="background-color:${backgroundColor}">
+          <a href="${link}" target="_blank"><h2 class="col-md-5">${name}</h2></a>
+          <h3 class="col-md-7">${game}</h3>
+        </div>`;
+        if(online === 'online'){
+          $('#streamerContainer').prepend(html);
+        }else if(online === 'offline'){
+          $('#streamerContainer').append(html);
+        }else{
+          $('#streamerContainer').after(html);
+        }
+      });
+    });
+  });
+}
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wikipedia Viewer</title>
+
+    <link rel="stylesheet" href="../css/wiki.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div class="bodyContainer">
+      <div id="searchContainer">
+        <a id ="randomArticle" target="_blank" href="https://en.wikipedia.org/wiki/Special:Random"><h1>Click here for a random article</h1></a>
+        <input id="searchInput" type="text" placeholder="Search Wikipedia..." name="searchInput">
+        <div id="searchResults" class="container">
+
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script>
+    var api = "https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=pageimages|extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=";
+    var cb = "&callback=?";
+    var input = "";
+    var resultsArr = [];
+    var output = "";
+    $('#searchInput').keypress(function(e){
+      if(e.which == 13){
+        input = $('#searchInput').val();
+        $('#searchContainer').css({"margin-top":"1%"});
+        searchWiki();
+      }
+    });
+
+    function searchWiki(){
+      $.getJSON(api+input+cb, function(data){
+        var results = data.query.pages;
+        console.log(results);
+        $.each(results, function(k, v){
+          resultsArr.push({title: v.title, body: v.extract, pageId: v.pageid})
+        });
+        $.each(resultsArr, function(index, value){
+          output +=
+          `<div class="result" onclick = "window.open('https://en.wikipedia.org/?curid=${resultsArr[index].pageId}')" >
+              <h1>${resultsArr[index].title}</h1>
+              <p>${resultsArr[index].body}</p>
+          </div>`
+        });
+        $('#searchResults').hide().html(output).fadeIn('800');
+        resultsArr = [];
+        output = "";
+        console.log(resultsArr);
+      });
+    };
+    </script>
+  </body>
+</html>

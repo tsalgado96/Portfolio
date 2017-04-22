@@ -1,0 +1,24 @@
+.container-fluid {
+  height: 100vh;
+  color: #fff;
+  background-color: #2C2640;
+  overflow: auto; }
+  .container-fluid h1 {
+    font-family: "Squada One", cursive;
+    text-align: center;
+    font-size: 5em; }
+  .container-fluid h2 {
+    font-family: "Raleway", sans-serif;
+    transition: color 0.25s; }
+    .container-fluid h2:hover {
+      color: #2C2640; }
+  .container-fluid h3 {
+    font-family: "Raleway", sans-serif; }
+  .container-fluid a {
+    text-decoration: none;
+    color: #fff; }
+  .container-fluid .streamer {
+    max-width: 700px;
+    margin: 0px auto 2px auto; }
+
+/*# sourceMappingURL=twitch.css.map */
