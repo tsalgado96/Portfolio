@@ -8,6 +8,7 @@ html, body
   margin: 0px
   padding: 0px
   font-family: $mainFont
+  position: relative
 
 /*Hero Section*/
 header
@@ -19,23 +20,38 @@ header
   display: block
   text-align: center
   overflow: auto
+  position: relative
   @media screen and (max-width: 768px)
     background: #707070
+  .active
+    a
+      color: $primaryBlue
 
   img
     height: 125px
-    margin-bottom: 80px
+    margin-top: 40px
+    margin-bottom: 50px
+
+  .navbar-bg
+    background-color: rgba(#282828, 0.95)
 
   nav
     text-align: center
     font-family: $mainFont
     font-size: 1.5em
-    padding: 10px 0 0 0
+    padding: 10px 0 10px 0
     letter-spacing: 3px
-    font-weight: 300
+
+    ul
+      list-style: none
+      text-align: center
+      padding: 0
+      li
+        display: inline-block
     a
-      color: rgba(200, 198, 198,.5)
+      color: #918e8e
       padding: 0 10px
+      font-weight: 300
       &:hover,&:active,&:focus
         text-decoration: none
         color: $primaryBlue
@@ -85,11 +101,12 @@ header
 #about
   background: #f9f9f9
   overflow: auto
+
 .about-container
   text-align: center
   max-width: 1060px
   margin: 0 auto
-  padding: 10px 20px 0 20px
+  padding: 0 20px 0 20px
   h1
     font-weight: 300
     font-size: 36px
@@ -118,6 +135,8 @@ header
   max-width: 700px
   margin: 0 auto
   padding-top: 15px
+  h1
+    margin-bottom: 40px
   h4
     color: $subheadingColor
 
@@ -161,6 +180,7 @@ header
       font-weight: 300
       font-size: 40px
       color: $headingColor
+      margin-top: 0
       margin-bottom: 40px
     p
       font-size: 17px

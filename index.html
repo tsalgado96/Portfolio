@@ -15,14 +15,16 @@
     <!-- Main Stylsheet -->
     <link rel="stylesheet" href="css/style.css">
   </head>
-  <body>
+  <body data-spy="scroll" data-target="#home" data-offset="65">
     <!-- Start Hero Container -->
     <header id="home">
-      <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#work">Work</a>
-        <a href="#contact">Contact</a>
+      <nav id="main-navigation" class="nav navbar-fixed-top navbar" role="navigation">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
       </nav>
       <img src="img/ts_blue.png" alt="Personal Logo">
       <h1>Hi, I'm TJ</h1>
@@ -48,7 +50,7 @@
               </p>
         </div>
         <div id="skills" class="skills-container">
-          <h1 style="padding:15px 0;">What I'm Good At</h1>
+          <h1>What I'm Good At</h1>
           <div class="skills-box-left text-left">
 
             <h4 class="progress-label">HTML</h4>

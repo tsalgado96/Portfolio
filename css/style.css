@@ -1,7 +1,8 @@
 html, body {
   margin: 0px;
   padding: 0px;
-  font-family: "Lato", sans-serif; }
+  font-family: "Lato", sans-serif;
+  position: relative; }
 
 /*Hero Section */
 header {
@@ -12,23 +13,35 @@ header {
   background-size: cover;
   display: block;
   text-align: center;
-  overflow: auto; }
+  overflow: auto;
+  position: relative; }
   @media screen and (max-width: 768px) {
     header {
       background: #707070; } }
+  header .active a {
+    color: #4abcab; }
   header img {
     height: 125px;
-    margin-bottom: 80px; }
+    margin-top: 40px;
+    margin-bottom: 50px; }
+  header .navbar-bg {
+    background-color: rgba(40, 40, 40, 0.95); }
   header nav {
     text-align: center;
     font-family: "Lato", sans-serif;
     font-size: 1.5em;
-    padding: 10px 0 0 0;
-    letter-spacing: 3px;
-    font-weight: 300; }
+    padding: 10px 0 10px 0;
+    letter-spacing: 3px; }
+    header nav ul {
+      list-style: none;
+      text-align: center;
+      padding: 0; }
+      header nav ul li {
+        display: inline-block; }
     header nav a {
-      color: rgba(200, 198, 198, 0.5);
-      padding: 0 10px; }
+      color: #918e8e;
+      padding: 0 10px;
+      font-weight: 300; }
       header nav a:hover, header nav a:active, header nav a:focus {
         text-decoration: none;
         color: #4abcab; }
@@ -83,7 +96,7 @@ header {
   text-align: center;
   max-width: 1060px;
   margin: 0 auto;
-  padding: 10px 20px 0 20px; }
+  padding: 0 20px 0 20px; }
   .about-container h1 {
     font-weight: 300;
     font-size: 36px;
@@ -112,6 +125,8 @@ header {
   max-width: 700px;
   margin: 0 auto;
   padding-top: 15px; }
+  .skills-container h1 {
+    margin-bottom: 40px; }
   .skills-container h4 {
     color: #5d5d5d; }
 
@@ -157,6 +172,7 @@ header {
       font-weight: 300;
       font-size: 40px;
       color: #383838;
+      margin-top: 0;
       margin-bottom: 40px; }
     #work .work-container p {
       font-size: 17px;
