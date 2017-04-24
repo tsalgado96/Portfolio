@@ -11,7 +11,11 @@ header {
   background-position: center center;
   background-size: cover;
   display: block;
-  text-align: center; }
+  text-align: center;
+  overflow: auto; }
+  @media screen and (max-width: 768px) {
+    header {
+      background: #707070; } }
   header img {
     height: 125px;
     margin-bottom: 80px; }
@@ -145,7 +149,7 @@ header {
   background: #fefefe;
   overflow: auto; }
   #work .work-container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
     margin-bottom: 50px;
     padding: 15px 17px; }
@@ -179,31 +183,21 @@ header {
   .work-pages .col-md-4 {
     padding-top: 30px; }
 
-.exp-work-container h1 {
-  margin-bottom: 40px;
-  font-weight: 300;
-  font-size: 38px; }
-.exp-work-container .col-md-3 {
-  min-height: 250px;
-  opacity: 0.65; }
-  .exp-work-container .col-md-3:hover {
-    opacity: 1; }
-.exp-work-container #wiki-viewer {
-  background: url("../img/wiki-viewer.png");
-  background-position: center;
-  background-size: cover; }
-.exp-work-container #random-quote {
-  background: url("../img/quote.png");
-  background-position: center;
-  background-size: cover; }
-.exp-work-container #twitch {
-  background: url("../img/twitch.png");
-  background-position: center;
-  background-size: cover; }
-.exp-work-container #weather {
-  background: url("../img/weather.png");
-  background-position: center;
-  background-size: cover; }
+.exp-work-container {
+  max-width: 1400px; }
+  .exp-work-container h4 {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    color: #5d5d5d; }
+  .exp-work-container .btn {
+    background-color: none;
+    border: 1px solid #4abcab;
+    color: #4abcab;
+    border-radius: 20px;
+    transition: color 0.25s, background-color 0.25s; }
+    .exp-work-container .btn:hover, .exp-work-container .btn:focus {
+      color: #fff;
+      background-color: #4abcab; }
 
 /*Contact Section */
 #contact {
