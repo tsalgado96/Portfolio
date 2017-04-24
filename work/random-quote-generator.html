@@ -29,34 +29,34 @@
   crossorigin="anonymous"></script>
   <script>
   $(document).ready(function(){
-  var quote, author, randNum;
-  var mainColor = ["#F44336", "#E91E63", "#9C27B0", "#673AB7",
-  "#3F51B5", "#2196F3", "#03A9F4", "#00BCD4",
-  "#009688", "#4CAF50", "#8BC34A", "#FF9800", "#FF5722"];
+    var quote, author, randNum;
+    var mainColor = ["#F44336", "#E91E63", "#9C27B0", "#673AB7",
+    "#3F51B5", "#2196F3", "#03A9F4", "#00BCD4",
+    "#009688", "#4CAF50", "#8BC34A", "#FF9800", "#FF5722"];
 
-  getQuote();
+    getQuote();
 
-  function getQuote(){
-    var url = "http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?";
-    randNum = Math.floor((Math.random()*mainColor.length));
-    $.getJSON(url, function(data){
-      quote = '"' + data.quoteText.trim() + '"';
-      author = "- " + data.quoteAuthor;
-      $(".quote").html(quote);
-      $(".author").html(author);
-      $(".container-fluid").css("background-color",mainColor[randNum]);
-      $(".container").css("color",mainColor[randNum]);
-      $(".btn").css("background-color",mainColor[randNum]);
-      $(".fa").css("color",mainColor[randNum]);
+    function getQuote(){
+      var url = "http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?";
+      randNum = Math.floor((Math.random()*mainColor.length));
+      $.getJSON(url, function(data){
+        quote = '"' + data.quoteText.trim() + '"';
+        author = "- " + data.quoteAuthor;
+        $(".quote").html(quote);
+        $(".author").html(author);
+        $(".container-fluid").css("background-color",mainColor[randNum]);
+        $(".container").css("color",mainColor[randNum]);
+        $(".btn").css("background-color",mainColor[randNum]);
+        $(".fa").css("color",mainColor[randNum]);
+      });
+    };
+
+    $("#trigger").on("click", getQuote);
+
+    $("#twitterIcon").on("click",function(){
+      window.open("https://twitter.com/intent/tweet?text=" + quote + " " + author);
     });
-  };
-
-  $("#trigger").on("click", getQuote);
-
-  $("#twitterIcon").on("click",function(){
-    window.open("https://twitter.com/intent/tweet?text=" + quote + " " + author);
   });
-});
 
   </script>
 </body>
