@@ -220,13 +220,13 @@
             <div id="contact-intro"><p>After you introduce yourself and your project, I'll get in touch with you to schedule a time to chat. You should expect to hear from me in a day or so.</p></div>
           </div>
           <div class="modal-body">
-            <form id="contact-form">
+            <form id="contact-form" name="contact-form" method="post" action="form_process.php">
               <div class="row">
                 <div class="col-md-6">
-                  <input type="text" name="name" placeholder="Name*">
+                  <input type="text" name="name" placeholder="Name*" required>
                 </div>
                 <div class="col-md-6">
-                  <input type="text" name="email" placeholder="Email*">
+                  <input type="text" name="email" placeholder="Email*" required>
                 </div>
               </div>
               <div class="row">
@@ -234,12 +234,12 @@
                   <input type="text" name="telephone" placeholder="Phone Number">
                 </div>
                 <div class="col-md-6">
-                  <input type="text" name="name" placeholder="Website">
+                  <input type="text" name="website" placeholder="Website">
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-12">
-                  <textarea name="comments" rows="8" id="" placeholder="Tell me about your project... What is it? Why are you doing it? What do you hope to accomplish? How can I help? Timeline and budget details are also appreciated. *"></textarea>
+                  <textarea required name="message" rows="8" id="" placeholder="Tell me about your project... What is it? Why are you doing it? What do you hope to accomplish? How can I help? Timeline and budget details are also appreciated. *"></textarea>
                 </div>
               </div>
               <div class="row">
@@ -260,7 +260,7 @@
         <a href="https://github.com/tsalgado96" target="_blank"><i class="fa fa-2x fa-github"></i></a>
         <a href="https://www.freecodecamp.com/tsalgado96" target="_blank"><i class="fa fa-2x fa-free-code-camp"></i></a>
         <a href="http://codepen.io/tsalgado/" target="_blank"><i class="fa fa-2x fa-codepen"></i></a>
-        <a href="mailto:tsalgado96@gmail.com" target="_blank"><i class="fa fa-2x fa-envelope-o"></i></a>
+        <a href="mailto:salgadodevelopment@gmail.com" target="_blank"><i class="fa fa-2x fa-envelope-o"></i></a>
       </div>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
