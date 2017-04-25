@@ -41,7 +41,8 @@ header
     font-size: 1.5em
     padding: 10px 0 10px 0
     letter-spacing: 3px
-
+    @media screen and (max-width: 430px)
+      font-size: 4vw
     ul
       list-style: none
       text-align: center
@@ -381,19 +382,16 @@ footer
   img
     height: 80px
     margin-bottom: 10px
+    padding-left: 6px
     transition: height .25s ease, margin-bottom .25s ease
     &:hover
       height: 90px
       margin-bottom: 0px
   p
     color: #e0e0e0
-    text-align: center
     font-weight: 300
-    margin-top: 10px
+    padding: 0 0 10px 9px
 
-.footer-icons
-  text-align: center
-  margin-top: 15px
   i
     padding: 0 15px
   a
