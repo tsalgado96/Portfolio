@@ -201,6 +201,8 @@ header {
 
 .exp-work-container {
   max-width: 1400px; }
+  .exp-work-container .thumbnail {
+    min-height: 400px; }
   .exp-work-container h4 {
     margin-top: 20px;
     margin-bottom: 40px;
@@ -210,7 +212,12 @@ header {
     border: 1px solid #4abcab;
     color: #4abcab;
     border-radius: 20px;
-    transition: color 0.25s, background-color 0.25s; }
+    transition: color 0.25s, background-color 0.25s;
+    display: inline-block;
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%); }
     .exp-work-container .btn:hover, .exp-work-container .btn:focus {
       color: #fff;
       background-color: #4abcab; }
@@ -373,8 +380,9 @@ footer {
 
 .footer-icons {
   text-align: center;
-  letter-spacing: 15px;
   margin-top: 15px; }
+  .footer-icons i {
+    padding: 0 15px; }
   .footer-icons a {
     color: #e0e0e0;
     transition: color 0.25s ease; }

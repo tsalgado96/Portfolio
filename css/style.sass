@@ -210,6 +210,8 @@ header
 
 .exp-work-container
   max-width: 1400px
+  .thumbnail
+    min-height: 400px
   h4
     margin-top: 20px
     margin-bottom: 40px
@@ -220,6 +222,11 @@ header
     color: #4abcab
     border-radius: 20px
     transition: color .25s, background-color .25s
+    display: inline-block
+    position: absolute
+    bottom: 35px
+    left: 50%
+    transform: translateX(-50%)
     &:hover, &:focus
       color: #fff
       background-color: #4abcab
@@ -386,8 +393,9 @@ footer
 
 .footer-icons
   text-align: center
-  letter-spacing: 15px
   margin-top: 15px
+  i
+    padding: 0 15px
   a
     color: #e0e0e0
     transition: color .25s ease
