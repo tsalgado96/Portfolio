@@ -213,8 +213,11 @@ header
 .exp-work-container
   max-width: 1400px
   .thumbnail
-    min-height: 400px
+    min-height: 425px
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+    position: relative
+    @media screen and (max-width: 992px)
+      min-height: 0
   h4
     margin-top: 20px
     margin-bottom: 40px
@@ -225,11 +228,15 @@ header
     color: #4abcab
     border-radius: 20px
     transition: color .25s, background-color .25s
-    display: inline-block
-    bottom: 10px
+    position: absolute
+    bottom: 15px
+    transform: translateX(-50%)
     &:hover, &:focus
       color: #fff
       background-color: #4abcab
+    @media screen and (max-width:992px)
+      position: static
+      transform: none
 /*Contact Section*/
 #contact
   background-color: $primaryBlue

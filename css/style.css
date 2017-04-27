@@ -206,8 +206,12 @@ header {
 .exp-work-container {
   max-width: 1400px; }
   .exp-work-container .thumbnail {
-    min-height: 400px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+    min-height: 425px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: relative; }
+    @media screen and (max-width: 992px) {
+      .exp-work-container .thumbnail {
+        min-height: 0; } }
   .exp-work-container h4 {
     margin-top: 20px;
     margin-bottom: 40px;
@@ -218,11 +222,16 @@ header {
     color: #4abcab;
     border-radius: 20px;
     transition: color 0.25s, background-color 0.25s;
-    display: inline-block;
-    bottom: 10px; }
+    position: absolute;
+    bottom: 15px;
+    transform: translateX(-50%); }
     .exp-work-container .btn:hover, .exp-work-container .btn:focus {
       color: #fff;
       background-color: #4abcab; }
+    @media screen and (max-width: 992px) {
+      .exp-work-container .btn {
+        position: static;
+        transform: none; } }
 
 /*Contact Section */
 #contact {
