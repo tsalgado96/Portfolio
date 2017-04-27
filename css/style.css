@@ -194,7 +194,8 @@ header {
 .work-pages {
   margin-top: 35px; }
   .work-pages img {
-    height: 200px; }
+    height: 200px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
   .work-pages h3 {
     color: #5d5d5d;
     font-weight: 300;
