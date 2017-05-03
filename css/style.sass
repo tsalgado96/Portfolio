@@ -1,5 +1,6 @@
 $mainFont: 'Lato', sans-serif
 $primaryBlue: #4abcab
+$primaryGray: #444F56
 $headingColor: #383838
 $subheadingColor: #5d5d5d
 $textColor: #7a7979
@@ -29,7 +30,6 @@ header
 
   img
     height: 125px
-    margin-top: 40px
     margin-bottom: 50px
 
   .navbar-bg
@@ -212,6 +212,10 @@ header
 
 .exp-work-container
   max-width: 1400px
+  h1
+    font-weight: 300
+    font-size: 40px
+    color: $headingColor
   .thumbnail
     min-height: 425px
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
@@ -309,7 +313,7 @@ header
   max-width: 600px
   margin: 10px auto 0 auto
   input[type="text"]
-    background-color: #707070
+    background-color: $primaryGray
     border: 2px solid #fff
     border-radius: 5px
     color: #fff
@@ -323,7 +327,7 @@ header
       outline: none
 
   textarea
-    background-color: #707070
+    background-color: $primaryGray
     border: 2px solid #fff
     border-radius: 5px
     color: #fff
@@ -338,7 +342,7 @@ header
       outline: none
 
   input[type="submit"]
-    background-color: #707070
+    background-color: $primaryGray
     border: 2px solid $primaryBlue
     border-radius: 20px
     color: #fff
@@ -354,12 +358,12 @@ header
       outline: none
     &:hover
       background-color: $primaryBlue
-      color: #707070
+      color: $primaryGray
 .modal-header
   border: none
 
 .modal-backdrop.modal-backdrop-fullscreen
-  background: #707070
+  background: $primaryGray
   &.in
     opacity: 1
     filter: alpha(opacity = 100)
@@ -382,7 +386,7 @@ header
 
 /*Footer*/
 footer
-  background-color: #707070
+  background-color: $primaryGray
   height: 200px
   text-align: center
   img
