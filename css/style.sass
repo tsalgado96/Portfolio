@@ -1,6 +1,6 @@
 $mainFont: 'Lato', sans-serif
 $primaryBlue: #4abcab
-$primaryGray: #444F56
+$primaryGray: #707070
 $headingColor: #383838
 $subheadingColor: #5d5d5d
 $textColor: #7a7979
@@ -29,8 +29,29 @@ header
       color: $primaryBlue
 
   img
-    height: 125px
+    height: 60px
     margin-bottom: 50px
+
+  svg
+    height: 50px
+    margin-bottom: 50px
+    .st0
+      transition: fill .3s
+      &:hover
+        fill: #ffffff
+    .st1
+      transition: fill .3s
+      &:hover
+        fill: #ffffff
+    .st2
+      transition: fill .3s
+      &:hover
+        fill: #ffffff
+    .st3
+      transition: fill .3s
+      &:hover
+        fill: #ffffff
+
 
   .navbar-bg
     background-color: rgba(#282828, 0.95)
@@ -114,7 +135,8 @@ header
     color: $headingColor
   img
     margin: 25px 0
-    height: 325px
+    width: 100%
+    max-width: 300px
     border-radius: 50%
 
 .description
@@ -245,6 +267,7 @@ header
 #contact
   background-color: $primaryBlue
   overflow: auto
+  padding-bottom: 30px
 
 .contact-container
   max-width: 900px
@@ -271,9 +294,10 @@ header
     font-size: 16px
     text-transform: uppercase
     padding: 7px 18px
-    transition: background .35s ease, color .35s ease
+    transition: background .35s ease, color .35s ease, border .35s ease
     &:hover,&:focus
-      background: #2A3A3F
+      background: $primaryGray
+      border: 1px solid $primaryGray
       color: $primaryBlue
       text-decoration: none
       outline: none
@@ -288,6 +312,7 @@ header
     border: 0
     -webkit-box-shadow: none
     box-shadow: none
+    position: relative
     h1
       color: #fff
       font-family: $mainFont
@@ -300,7 +325,15 @@ header
       font-weight: 300
       font-size: 1.5em
     i
-      color: #fff
+      color: $primaryBlue
+      position: absolute
+      top: 10
+      right: 0
+      margin-right: 10px
+      transition: opacity .2s
+      &:hover
+        cursor: pointer
+        opacity: .6
     img
       height: 150px
 
@@ -391,12 +424,12 @@ footer
   text-align: center
   img
     height: 80px
-    margin-bottom: 10px
-    padding-left: 6px
+    margin-bottom: 20px
+    margin-top: -40px
     transition: height .25s ease, margin-bottom .25s ease
     &:hover
       height: 90px
-      margin-bottom: 0px
+      margin-bottom: 10px
   p
     color: #e0e0e0
     font-weight: 300

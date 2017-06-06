@@ -21,8 +21,27 @@ header {
   header .active a {
     color: #4abcab; }
   header img {
-    height: 125px;
+    height: 60px;
     margin-bottom: 50px; }
+  header svg {
+    height: 50px;
+    margin-bottom: 50px; }
+    header svg .st0 {
+      transition: fill 0.3s; }
+      header svg .st0:hover {
+        fill: #ffffff; }
+    header svg .st1 {
+      transition: fill 0.3s; }
+      header svg .st1:hover {
+        fill: #ffffff; }
+    header svg .st2 {
+      transition: fill 0.3s; }
+      header svg .st2:hover {
+        fill: #ffffff; }
+    header svg .st3 {
+      transition: fill 0.3s; }
+      header svg .st3:hover {
+        fill: #ffffff; }
   header .navbar-bg {
     background-color: rgba(40, 40, 40, 0.95); }
   header nav {
@@ -105,7 +124,8 @@ header {
     color: #383838; }
   .about-container img {
     margin: 25px 0;
-    height: 325px;
+    width: 100%;
+    max-width: 300px;
     border-radius: 50%; }
 
 .description {
@@ -239,7 +259,8 @@ header {
 /*Contact Section */
 #contact {
   background-color: #4abcab;
-  overflow: auto; }
+  overflow: auto;
+  padding-bottom: 30px; }
 
 .contact-container {
   max-width: 900px;
@@ -266,9 +287,10 @@ header {
     font-size: 16px;
     text-transform: uppercase;
     padding: 7px 18px;
-    transition: background 0.35s ease, color 0.35s ease; }
+    transition: background 0.35s ease, color 0.35s ease, border 0.35s ease; }
     .contact-container button:hover, .contact-container button:focus {
-      background: #2A3A3F;
+      background: #707070;
+      border: 1px solid #707070;
       color: #4abcab;
       text-decoration: none;
       outline: none; }
@@ -281,7 +303,8 @@ header {
     background: transparent;
     border: 0;
     -webkit-box-shadow: none;
-    box-shadow: none; }
+    box-shadow: none;
+    position: relative; }
     .modal-fullscreen .modal-content h1 {
       color: #fff;
       font-family: "Lato", sans-serif;
@@ -294,7 +317,15 @@ header {
       font-weight: 300;
       font-size: 1.5em; }
     .modal-fullscreen .modal-content i {
-      color: #fff; }
+      color: #4abcab;
+      position: absolute;
+      top: 10;
+      right: 0;
+      margin-right: 10px;
+      transition: opacity 0.2s; }
+      .modal-fullscreen .modal-content i:hover {
+        cursor: pointer;
+        opacity: 0.6; }
     .modal-fullscreen .modal-content img {
       height: 150px; }
 
@@ -307,7 +338,7 @@ header {
   max-width: 600px;
   margin: 10px auto 0 auto; }
   #contact-form input[type="text"] {
-    background-color: #444F56;
+    background-color: #707070;
     border: 2px solid #fff;
     border-radius: 5px;
     color: #fff;
@@ -320,7 +351,7 @@ header {
     #contact-form input[type="text"]:focus {
       outline: none; }
   #contact-form textarea {
-    background-color: #444F56;
+    background-color: #707070;
     border: 2px solid #fff;
     border-radius: 5px;
     color: #fff;
@@ -334,7 +365,7 @@ header {
     #contact-form textarea:focus {
       outline: none; }
   #contact-form input[type="submit"] {
-    background-color: #444F56;
+    background-color: #707070;
     border: 2px solid #4abcab;
     border-radius: 20px;
     color: #fff;
@@ -350,13 +381,13 @@ header {
       outline: none; }
     #contact-form input[type="submit"]:hover {
       background-color: #4abcab;
-      color: #444F56; }
+      color: #707070; }
 
 .modal-header {
   border: none; }
 
 .modal-backdrop.modal-backdrop-fullscreen {
-  background: #444F56; }
+  background: #707070; }
   .modal-backdrop.modal-backdrop-fullscreen.in {
     opacity: 1;
     filter: alpha(opacity=100); }
@@ -376,17 +407,17 @@ header {
     width: 970px; } }
 /*Footer */
 footer {
-  background-color: #444F56;
+  background-color: #707070;
   height: 200px;
   text-align: center; }
   footer img {
     height: 80px;
-    margin-bottom: 10px;
-    padding-left: 6px;
+    margin-bottom: 20px;
+    margin-top: -40px;
     transition: height 0.25s ease, margin-bottom 0.25s ease; }
     footer img:hover {
       height: 90px;
-      margin-bottom: 0px; }
+      margin-bottom: 10px; }
   footer p {
     color: #e0e0e0;
     font-weight: 300;
