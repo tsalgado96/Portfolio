@@ -23,25 +23,6 @@ header {
   header img {
     height: 60px;
     margin-bottom: 50px; }
-  header svg {
-    height: 50px;
-    margin-bottom: 50px; }
-    header svg .st0 {
-      transition: fill 0.3s; }
-      header svg .st0:hover {
-        fill: #ffffff; }
-    header svg .st1 {
-      transition: fill 0.3s; }
-      header svg .st1:hover {
-        fill: #ffffff; }
-    header svg .st2 {
-      transition: fill 0.3s; }
-      header svg .st2:hover {
-        fill: #ffffff; }
-    header svg .st3 {
-      transition: fill 0.3s; }
-      header svg .st3:hover {
-        fill: #ffffff; }
   header .navbar-bg {
     background-color: rgba(40, 40, 40, 0.95); }
   header nav {
